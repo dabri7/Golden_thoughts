@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'random_thought/thought.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="center">
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Zapisz">
+    </form>
+    <br>
+     <a href="{% url 'random_thought:list-thought' %}"><button>Wróć</button></a>
+</div>
+</body>
+</html>
